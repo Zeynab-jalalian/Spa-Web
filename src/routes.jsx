@@ -3,6 +3,7 @@ import RootLayout from "./components/Layouts/RootLayout";
 import Home from "./pages/Home";
 import CourseDetails from "./pages/CourseDetails";
 import NotFound from "./pages/NotFound";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,11 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       {
         path: "courses/:courseId",
-        element: <CourseDetails />,
+        element: (
+          <PrivateRoute>
+            <CourseDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/*",
