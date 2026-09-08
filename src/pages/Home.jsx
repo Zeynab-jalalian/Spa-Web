@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div
       id="root"
-      className="grid my-40 grid-cols-4 max-w-[1200px]  mx-auto gap-5 relative z-50"
+      className="grid my-40 grid-cols-4 max-w-300  mx-auto gap-5 relative z-50"
     >
       {courses.map((course) => {
         return <Course key={course.id} {...course} />;

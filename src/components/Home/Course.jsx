@@ -5,8 +5,8 @@ const Course = ({ id, title, description, img, students, price }) => {
   const COURSE_URL = `/courses/${id}`;
 
   return (
-    <article className="w-full pt-3 overflow-hidden h-[376px] border flex flex-col justify-between rounded-lg border-white/10 bg-white/3 *:p-3 space-y-3">
-      <header className="w-[90%] p-0! mx-auto min-h-[148px] rounded-lg overflow-hidden border  border-white/18 shadow-xl">
+    <article className="w-full pt-3 overflow-hidden h-94 border flex flex-col justify-between rounded-lg border-white/10 bg-white/3 *:p-3 space-y-3">
+      <header className="w-[90%] p-0! mx-auto min-h-37 rounded-lg overflow-hidden border  border-white/18 shadow-xl">
         <Link to={COURSE_URL}>
           <img src={img} className="size-full object-cover" alt="" />
         </Link>
