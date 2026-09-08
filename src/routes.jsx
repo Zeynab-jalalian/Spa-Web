@@ -1,16 +1,10 @@
 import { createBrowserRouter, Outlet } from "react-router";
+import RootLayout from "./components/Layouts/RootLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        Home page
-        <br />
-        <Outlet />
-        <div>Footer</div>
-      </div>
-    ),
+    element: <RootLayout />,
     children: [
       { index: true, element: <div>Index page (Courses List)</div> },
       {
@@ -18,7 +12,7 @@ const router = createBrowserRouter([
         element: <div>Course details page</div>,
       },
       {
-        path: "/*",
+        path: "*",
         element: <div>404 Not Found</div>,
       },
     ],
