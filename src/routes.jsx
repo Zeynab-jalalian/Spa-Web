@@ -1,6 +1,7 @@
 import { createBrowserRouter, Outlet } from "react-router";
 import RootLayout from "./components/Layouts/RootLayout";
 import Home from "./pages/Home";
+import CourseDetails from "./pages/CourseDetails";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       {
         path: "courses/:courseId",
-        element: <div>Course details page</div>,
+        element: <CourseDetails />,
       },
       {
         path: "*",

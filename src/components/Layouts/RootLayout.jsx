@@ -8,7 +8,7 @@ function RootLayout() {
   return (
     <section id="root">
       <Header />
-      <main>
+      <main id="content" className="z-10 relative">
         <Outlet />
       </main>
       <BackgroundUi />
