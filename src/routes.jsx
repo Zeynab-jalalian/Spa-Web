@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet } from "react-router";
 import RootLayout from "./components/Layouts/RootLayout";
 import Home from "./pages/Home";
 import CourseDetails from "./pages/CourseDetails";
+import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -14,8 +15,8 @@ const router = createBrowserRouter([
         element: <CourseDetails />,
       },
       {
-        path: "*",
-        element: <div>404 Not Found</div>,
+        path: "/*",
+        element: <NotFound />,
       },
     ],
   },

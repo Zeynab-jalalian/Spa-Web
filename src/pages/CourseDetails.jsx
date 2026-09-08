@@ -1,16 +1,21 @@
 import { BiShoppingBag } from "react-icons/bi";
 import { LOREM_TEXT } from "./../data/constants.js";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import courses from "../data/courses.js";
 import { useEffect, useState } from "react";
 
 const Course = () => {
   const { courseId } = useParams();
   const [course, setCourse] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     const mainCourse = courses.find((course) => course.id === courseId);
-    setCourse(mainCourse);
+    if (mainCourse) {
+      setCourse(mainCourse);
+    } else {
+      navigate("not-found");
+    }
   }, [courseId]);
 
   return (
