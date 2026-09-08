@@ -10,7 +10,7 @@ const Course = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const mainCourse = courses.find((course) => course.id === courseId);
+    const mainCourse = courses.find((course) => course.id === Number(courseId));
     if (mainCourse) {
       setCourse(mainCourse);
     } else {

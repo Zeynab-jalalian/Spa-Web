@@ -1,10 +1,13 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Outlet, useMatches } from "react-router";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import BackgroundUi from "../common/BackgroundUi";
 
 function RootLayout() {
+  const matches = useMatches();
+  const hideFooter = matches.some((match) => match.handle?.hideFooter);
+
   return (
     <section id="root">
       <Header />
@@ -12,7 +15,7 @@ function RootLayout() {
         <Outlet />
       </main>
       <BackgroundUi />
-      <Footer />
+      {!hideFooter && <Footer />}
     </section>
   );
 }

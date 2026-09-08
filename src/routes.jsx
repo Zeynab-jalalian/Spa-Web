@@ -17,6 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/*",
         element: <NotFound />,
+        handle: { hideFooter: true },
       },
     ],
   },
