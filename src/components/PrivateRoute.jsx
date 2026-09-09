@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 
-function PrivateRoute({ children }) {
+function PrivateRoute() {
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ function PrivateRoute({ children }) {
       navigate("/");
     }
   }, []);
-  return children;
+  return <Outlet />;
 }
 
 export default PrivateRoute;
